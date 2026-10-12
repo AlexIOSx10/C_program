@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("Enter array size: ");
+    scanf("%d",&n);
+
+    int arr[n];
+
+    printf("Enter array elements:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d",&arr[i]);
+    }
+
+    for (int i = 0; i < n; i++) {
+        int count = 0;
+        int alreadyCounted = 0;
+
+        // Check if this element appeared earlier
+        for (int k = 0; k < i; k++) {
+            if (arr[k] == arr[i]) {
+                alreadyCounted = 1;
+                break;
+            }
+        }
+
+        if (alreadyCounted) {
+            continue;
+        }
+
+        // Count occurrences of the current element
+        for (int j = 0; j < n; j++) {
+            if (arr[i] == arr[j]) {
+                count++;
+            }
+        }
+
+        // Print only duplicate elements
+        if (count > 1) {
+            printf("%d appears %d times\n", arr[i], count);
+        }
+    }
+
+    return 0;
+}
