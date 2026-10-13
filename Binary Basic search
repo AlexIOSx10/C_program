@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50, 60};
+    int left = 0;
+    int right = 5;
+    int target;
+    int found = 0;
+ 
+    printf("enter target\n");
+    scanf("%d",&target);
+    
+    while (left <= right){
+        int mid = (left + right)/2;
+
+        if (arr[mid] == target){
+            printf("Found");
+            found = 1;
+            break;
+        }
+        else if (target > arr[mid]) {
+            left = mid + 1;
+        }
+        else {
+            right = mid - 1;
+        }
+    }
+    if (found == 0) {
+        printf("Not found");
+    }
+    return 0;
+}
