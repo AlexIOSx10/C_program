@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 int main() {
-  int arr[5]={59,71,58,50,102,56};
+  int arr[6]={59,71,58,50,102,56};
   int i = 1;
   int j;
   int temp;
 
-  while(i<5){
+  while(i<6){
    temp = arr[i];
     j = i - 1;
   while(j >= 0 && arr[j]>temp){
@@ -16,7 +16,7 @@ int main() {
   arr[j+1]=temp;
   i++;
   }
-  for(i=0;i<5;i++){
+  for(i=0;i<6;i++){
     printf("%d\n",arr[i]);
   }
     return 0;
