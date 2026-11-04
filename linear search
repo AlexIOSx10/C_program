@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+
+int a[] = {1,2,3,4};
+int i;
+int target;
+int found = 0;
+
+printf("enter target");
+scanf("%d",&target);
+
+for(i=0;i<4;i++){
+    if(a[i] == target){
+        printf("found");
+        found = 1;
+        break;
+    }
+}
+
+if(found == 0){
+    printf("not found");
+}
+
+    return 0;
+}
