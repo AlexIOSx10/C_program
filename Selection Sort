@@ -2,7 +2,7 @@
 
 int main() {
   int arr[6]={59,71,58,50,102,56};
-  int i = 1;
+  int i;
   int j;
   int temp, min;
 
