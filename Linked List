@@ -1,0 +1,52 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int data;
+    struct node *next;
+} Node;
+
+int main() {
+
+    Node *head, *second, *third , *fourth;
+    Node *temp;
+
+    // Allocate memory
+    head = malloc(sizeof(Node));
+    second = malloc(sizeof(Node));
+    third = malloc(sizeof(Node));
+    fourth = malloc(sizeof(Node));
+
+    // First node
+    head->data = 10;
+    head->next = second;
+
+    // Second node
+    second->data = 20;
+    second->next = third;
+
+    // Third node
+    third->data = 30;
+    third->next = fourth;
+
+    //fourth node
+    fourth->data = 40;
+    fourth->next = NULL;
+
+
+    // Traverse and print
+    temp = head;
+
+    while(temp != NULL) {
+        printf("%d\n", temp->data);
+        temp = temp->next;
+    }
+
+    // Free memory
+    free(head);
+    free(second);
+    free(third);
+
+    return 0;
+}
